@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taj Hotel Booking Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<div>
+    <style>
+        .h-line {
+            width: 150px; 
+            margin: 0 auto; 
+            height: 1.7px; 
+            background-color: #333; 
+          }
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        .auth-buttons button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            width: 48%;
+        }
+        
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        
+        .contact-info p {
+            margin: 10px 0;
+        }
+        
+        .contact-form {
+            width: 48%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        
+        .contact-form h2 {
+            margin-top: 0;
+        }
+        
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            border: 1px solid #ddd;
+        }
+        
+        .contact-form button {
+            padding: 8px 10px;
+            background-color: #300;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+          
+          
+    </style>
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.html">Taj Hotel</a>
+        <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link me-2" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-2" href="rooms.html">Room</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-2" href="facilities.html">Facilities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-2" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-2" href="about.html">About</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+              Login
+            </button>
+            <button type="button" class="btn btn-outline-dark shadow-none" data-bs-toggle="modal" data-bs-target="#registerModal">
+              Register
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">
+            <h5 class="modal-title d-flex align-items-center">
+              <i class="bi bi-person-circle fs-3 me-2"></i> User Login
+            </h5>
+            <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Email address</label>
+              <input type="email" class="form-control shadow-none" required>
+            </div>
+            <div class="mb-4">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control shadow-none" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-dark shadow-none">Login</button>
+            <a class="nav-link me-2 text-secondary" href="forgotpassword.html">Forgot Password?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">
+            <h5 class="modal-title d-flex align-items-center">
+              <i class="bi bi-person-lines-fill fs-3 me-2"></i>User Registration
+            </h5>
+            <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <span class="badge rounded-pill bg-light text-dark mb-3 text-wrap lh-base">
+              Note: Your details must match with your ID (Aadhaar card, passport, driving license, etc.) that will be required during check-in.
+            </span>  
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Name</label>
+                  <input type="text" class="form-control shadow-none text-uppercase" placeholder="Enter your name" required> 
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control shadow-none" placeholder="Enter your email" required> 
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control shadow-none" placeholder="Enter your phone number" required> 
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Picture</label>
+                  <input type="file" class="form-control shadow-none"> 
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label class="form-label">Address</label>
+                  <textarea class="form-control shadow-none" rows="1" required></textarea>      
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Pincode</label>
+                  <input type="number" class="form-control shadow-none text-uppercase" placeholder="Enter your pincode" required> 
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Date of Birth</label>
+                  <input type="date" class="form-control shadow-none" required> 
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-control shadow-none" placeholder="Enter your password" required> 
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Confirm Password</label>
+                  <input type="password" class="form-control shadow-none" placeholder="Confirm your password" required> 
+                </div>
+              </div>
+              <div class="text-center my-1">
+                <button type="submit" class="btn btn-dark shadow-none">Register</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<div id="about-section" class="container"></div>
+      <div class="my-5 px-4">
+        <h2 class="fw-bold h-font text-center">CONTACT</h2>
+        <div class="h-line bg-dark"></div>
+        <div class="h-line"></div>
+        <p class="text-center mt-3">
+          Our team is available 24/7 to assist you with any questions or special requests.
+           We look forward to welcoming you!
+        </p>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info">
+            <div class="map">   
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3849.4132744191816!2d73.92223837326077!3d15.245242060973032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfb0ac6be75689%3A0x31a73ca5d4a80468!2sTaj%20Exotica%20Resort%20%26%20Spa%2C%20Goa!5e0!3m2!1sen!2sin!4v1724706794071!5m2!1sen!2sin" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <div class="address">
+                <p><strong>Address:</strong></p>
+                <p></p>
+            </div>
+            <div class="contact-details">
+                <p><strong>Call us:</strong></p>
+                <p>+91 7619629922</p>
+                <p>+91 7619630403</p>
+            </div>
+            <div class="email">
+                <p><strong>Email:</strong></p>
+                <p><a href="mailto:ask.tjwebdev@gmail.com">mra579342@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>Send a message</h2>
+            <form action="#" method="POST">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</main>
+      
+      
+
+
+  <div class="container-fluid bg-white mt-5">
+    <div class="row">
+      <div class="col-lg-4 p-4">
+        <h3 class="h-font fw-bold fs-3">Taj Hotel</h3>
+        <p>TAJ Hotel, we strive to provide an unparalleled experience,
+           combining luxury with exceptional service. Our commitment to excellence
+            ensures that every stay is memorable, whether you're here for business or leisure.
+             Discover the elegance and comfort that define TOJ Hotel and let us make your visit extraordinary</p>
+      </div>
+      <div class="col-lg-4 p-4">
+        <h5 class="mb-3">Links</h5>
+        <a href="#" class="d-inline-block mb-3 text-dark text-decoration-none">Home</a><br>
+        <a href="#" class="d-inline-block mb-3 text-dark text-decoration-none">Rooms</a><br>
+        <a href="#" class="d-inline-block mb-3 text-dark text-decoration-none">Facilities</a><br>
+        <a href="#" class="d-inline-block mb-3 text-dark text-decoration-none">Contact</a><br>
+        <a href="#" class="d-inline-block mb-3 text-dark text-decoration-none">About</a><br>
+      </div>
+      <div class="col-lg-4 p-4">
+        <h5 class="mb-3">Follow us</h5>
+        <a href="#" class="d-inline-block text-dark text-decoration-none mb-2">
+                <i class="bi bi-twitter me-1"></i>Twitter
+              </a><br>
+              <a href="#" class="d-inline-block text-dark text-decoration-none mb-2">
+                <i class="bi bi-facebook me-1"></i>Facebook
+              </a><br>
+              <a href="#" class="d-inline-block text-dark text-decoration-none">
+                <i class="bi bi-instagram me-1"></i>Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        <h6 class="text-center bg-dark text-white p-3 m-0">Designed and Developed by Avinash MR 7619629922</h6>
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlPHRhNIM5mNQSKVJAz7LYI2h9bsGLJ6Qjqmjw58DZjG3e4wqG5Zw6LHB7D" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        
